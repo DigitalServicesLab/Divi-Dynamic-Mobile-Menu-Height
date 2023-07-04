@@ -1,5 +1,4 @@
 # Divi-Dynamic-Mobile-Menu-Height
-# Divi-Dynamic-Mobile-Menu-Height
 
 This script helps to make Divi's mobile menu more 'mobile friendly. 
 By default the mobile menu is not scrollable, so on short pages the menu can become hidden below the bottom of the window, making some of the links inaccessible to users. 
@@ -45,8 +44,35 @@ add_action( 'wp_enqueue_scripts', 'enqueue_divi_menu-size-helper' );
 1. Copy the script
 1. Navigate to Divi > Theme Options > Integration
 1. Paste the script into the "Body" field and wrap it in `<script type="text/javascript">`...`</script>` tags 
-1. Update line 15 in include the CSS ID's of your specific environment `beginObserver('header-section', 'menu-module', 'mobile_menu1' )`
+1. Update line 15 & 16 to in include the CSS ID's of your specific environment 
+```    
+const cssIDs = {
+        'headerSectionID' : 'header-section',
+        'menuModuleID'    : 'menu-module',
+};
+```
 
 ## Configuring The Script
 
-For this script to work, it needs to know the CSS ID's of your header element that contains your menu, the Menu Module that contains the menu and the mobile menu element. 
+For this script to work, it needs to know the CSS ID's of your header element that contains your menu and the Menu Module that contains the menu. 
+
+1. Go to Divi > Theme Builder
+1. Edit the containing Section and give it CSS ID
+1. Edit the Menu Module and give it a CSS ID
+1. Update the script replacing `header-section` and `menu-module` on line 15 and 16, with the CSS ID's you just created for the Section and Module
+
+That's all. 
+
+## Fallback CSS
+
+If you wish to add some fall back css to your stylesheet, you can also add
+
+```
+.et_mobile_menu {
+    max-height: calc(90vh - 80px); /* fallback for a couple of mobile broswers that don't yet support 'dvh' units */
+    max-height: calc(90dvh - 80px); /* 80px = expected max height of header - update for your use case */
+    overflow: scroll !important;
+}
+```
+**Note** 
+If you have a statically sized header that doesnt change height, then you can simply add the CSS and forget the entire Javascript component  :-) 
