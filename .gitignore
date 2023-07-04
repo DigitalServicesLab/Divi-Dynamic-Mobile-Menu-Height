@@ -1,6 +1,0 @@
-# Logs
-logs
-*.log
-
-# ignore commit message template
-.commitmsg
