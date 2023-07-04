@@ -1,4 +1,4 @@
-# Divi-Dynamic-Mobile-Menu-Height
+# Divi Dynamic Mobile Menu Height
 
 This script helps to make Divi's mobile menu more 'mobile friendly. 
 By default the mobile menu is not scrollable, so on short pages the menu can become hidden below the bottom of the window, making some of the links inaccessible to users. 
@@ -28,7 +28,7 @@ const cssIDs = {
         'menuModuleID'    : 'menu-module',
 };
 ```
-1. Enqueue it
+4. Enqueue it
 ```
 function enqueue_divi_menu-size-helper() {
 
@@ -75,4 +75,4 @@ If you wish to add some fall back css to your stylesheet, you can also add
 }
 ```
 **Note** 
-If you have a statically sized header that doesnt change height, then you can simply add the CSS and forget the entire Javascript component  :-) 
+If you have a statically sized header that doesn't change height as screen width decreases, then you can simply add the CSS and forget the entire Javascript component  :-) 
