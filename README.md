@@ -69,8 +69,8 @@ If you wish to add some fall back css to your stylesheet, you can also add
 
 ```
 .et_mobile_menu {
-    max-height: calc(90vh - 80px); /* fallback for a couple of mobile broswers that don't yet support 'dvh' units */
-    max-height: calc(90dvh - 80px); /* 80px = expected max height of header - update for your use case */
+    max-height: calc(80vh - 80px); /* fallback for a couple of mobile broswers that don't yet support 'dvh' units */
+    max-height: calc(100dvh - 80px); /* 80px = expected max height of header - update for your use case */
     overflow: scroll !important;
 }
 ```
