@@ -88,7 +88,9 @@
     /**
     * Debounces the event handler and encloses required variables. 
     * 
-    * @param {string} menuUL The menu element
+    * @param {function} func function to throttle
+    * @param {int} time time in ms to wait before executing function
+    * @param {Node} node The the element the event handler is attached to (the mobile menu). 
     * @return {function} closure containing event handler and required variables
     */
     function debounceCreateHander(func, time, node){
@@ -100,8 +102,5 @@
             timer = setTimeout(func, time, node, event);
         };
     }
-    
-
-
 
 })()
